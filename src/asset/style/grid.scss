@@ -1,0 +1,109 @@
+/*     row start      */
+@import "../fonts/icomoon/style.css";
+
+.row {
+  position: relative;
+  height: auto;
+  zoom: 1;
+  display: block;
+  box-sizing: border-box;
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+}
+
+.flex {
+  display: flex;
+  @extend .row
+}
+
+.flex-row {
+  @extend .flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.flex-row-reverse {
+  @extend .flex;
+  flex-direction: row-reverse;
+}
+
+.flex-column-reverse {
+  @extend .flex;
+  flex-direction: column-reverse;
+}
+
+// align-items:flex-start; 弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。
+.row-flex-top > .col {
+  align-items: flex-start;
+}
+
+.row-flex-center {
+  //
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.row-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+}
+
+/*     row end      */
+
+
+/*     col start    */
+.col {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: (100/12)+0% * $i;
+    flex: $i;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+
+.is-Active{
+  color: gold;
+}
+
+/*     col end     */
+
+
+
+
+
+
+
+
+
