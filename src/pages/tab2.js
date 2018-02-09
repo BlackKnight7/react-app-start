@@ -4,6 +4,7 @@ import HandToucher from '../common/handToucher'
 class Tab2 extends Component {
     componentDidMount() {
         let handToucher = HandToucher(this.el);
+        // console.log(window.getComputedStyle(this.el),444);
         handToucher.on('tap',function () {
             console.log('on tap')
         })
@@ -14,7 +15,7 @@ class Tab2 extends Component {
 
     render() {
         return (
-            <div style={{position:'absolute'}}  ref={(el) => this.el = el}>tab2</div>
+            <div ref={(el) => this.el = el}>tab2</div>
         )
     }
 }
