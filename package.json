@@ -47,7 +47,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "mock": "json-server -c mock/json-server.json mock/db.js"
+    "mock": "json-server -c mock/json-server.json mock/db.js",
+    "server":"npm start & npm run mock"
   },
   "jest": {
     "collectCoverageFrom": [

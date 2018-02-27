@@ -1,10 +1,14 @@
 ;(function (global, doc, factory) {
 
-    if (typeof module !== 'undefined' && typeof module.exports === 'object') {  // 支持 module.exports
+    if (typeof module !== 'undefined' && typeof module.exports === 'object') {  // 支持 Node.js
         module.exports = factory(global, doc);
-    } else if (typeof global.define === 'function' && global.define.amd) {
+    } else if (typeof global.define === 'function' && global.define.amd) { // AMD
+        global.define([], function () {
+            return factory(global, doc);
+        });
+    } else {
         // 挂在到window
-        global.andToucher = factory(global, doc);
+        global.HandToucher = factory(global, doc);
     }
 })(window, document,
 //手势函数
@@ -68,7 +72,7 @@
         }
 
         function _touchStart(e) {
-            console.log(11)
+            console.log(11);
             e.preventDefault();
             // 一个手指时
             this.touchTime = 0;
@@ -87,7 +91,6 @@
                 // 记录当前的时间
                 this.touchTime = getCurrentTime();
             }
-
         }
 
         function _touchMove(e) {
@@ -133,7 +136,6 @@
             if (this.eventList['slide'] && moveEndTimeDiff < 10) {
                 let v = this.diffY / diffTime * 1000;
                 moveSlide.call(this, v);
-
             }
 
         }
@@ -175,6 +177,7 @@
                 this.eventList[eventName].push(callback)
             }
         };
+
 
         return HandToucher;
 
