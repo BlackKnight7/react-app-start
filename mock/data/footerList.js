@@ -8,7 +8,7 @@ const list = [
     },
     {
         iconClassName: 'icon-location',
-        text: '标签2',
+        text: 'H5键盘例子',
         path:'/tab2'
     },
     {

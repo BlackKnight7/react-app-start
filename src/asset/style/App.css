@@ -5,3 +5,9 @@ a {
   text-decoration: none;
 }
 
+.damo{
+  border: solid 1px #cccccc;
+  width: 80%;
+  height: 1rem;
+
+}

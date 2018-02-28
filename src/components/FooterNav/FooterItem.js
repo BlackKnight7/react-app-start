@@ -19,10 +19,10 @@ const IconSpan= styled.div`
    padding-top: 0.1rem;
    color: #666;
 `;
-const Icon = styled.i`
-  display: block;
-  margin: 0 auto;
-`;
+// const Icon = styled.i`
+//   display: block;
+//   margin: 0 auto;
+// `;
 
 
 class FooterItem extends Component {
@@ -48,7 +48,7 @@ class FooterItem extends Component {
         return (
             <Col >
                 {/*<img className='footerImg' src={this.props.src} alt={this.props.alt}/>*/}
-                <Link onClick={this.handleClick} to={this.props.to}>
+                <Link onTouchEnd={this.handleClick} to={this.props.to}>
                     <IconSpan ><i className={ [this.props.iconClassName,iconClass].join(' ') } /></IconSpan>
                     <Text className={iconClass}>{this.props.text}</Text>
                 </Link>
