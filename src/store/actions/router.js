@@ -21,7 +21,7 @@ export function routerListAction(routers) {
 export function queryFooterRouters(params) {
     console.log(params,'params');
     return (dispatch, getState) => {
-        axios.get('http://192.168.9.114:4000/list').then(res =>{
+        axios.get('http://127.0.0.1:4000/list').then(res =>{
             console.log(res.data,'response');
             dispatch(routerListAction(res.data));
             return res
